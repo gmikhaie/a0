@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.assigment0.ui.theme.Assigment0Theme
+import androidx.compose.material3.Button
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Assigment0Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    DecisionScreen(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -44,4 +46,11 @@ fun GreetingPreview() {
     Assigment0Theme {
         Greeting("Android")
     }
+}
+
+fun DecisionScreen (
+    onOk: (String) -> Unit,
+    onOk: (String) -> Unit,
+) {
+
 }
