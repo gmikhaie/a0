@@ -19,17 +19,27 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        val total = 0
+
         setContent {
             Assigment0Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     DecisionScreen(
-                        name = "Android",
+                        onOk = {},
+                        onMeh = {},
+                        onNo = {},
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
     }
+}
+
+@Composable
+fun GenerateValue() {
+
 }
 
 @Composable
@@ -50,7 +60,20 @@ fun GreetingPreview() {
 
 fun DecisionScreen (
     onOk: (String) -> Unit,
-    onOk: (String) -> Unit,
+    onMeh: (String) -> Unit,
+    onNo: (String) -> Unit,
+    modifier: Modifier = Modifier
 ) {
 
+
+    Button(
+        onClick = {
+            if (newCityName.isNotBlank()) {
+                onAddCity(newCityName)
+                newCityName = ""
+            }
+        }
+    ) {
+        Text("Add City")
+    }
 }
