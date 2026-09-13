@@ -59,7 +59,6 @@ fun GreetingPreview() {
 @Composable
 fun DecisionScreen() {
     var displayText by remember { mutableStateOf("") }
-
     var buttonClickedCount by remember { mutableStateOf(0) }
 
     Column (
@@ -78,24 +77,41 @@ fun DecisionScreen() {
 
             Button(
                 onClick = {
-                    displayText = "Ok"
+                    val random = Math.random()
+                    if (random < 0.5) {
+                        displayText = "Yes"
+                    } else {
+                        displayText = "No"
+                    }
                     ++buttonClickedCount
                 }
             ) {
-                Text("Yes")
+                Text("Ok")
             }
 
-            Button(onClick = {
-                displayText = "Meh"
-                ++buttonClickedCount
-            }) {
+            Button(
+                onClick = {
+                    val random = Math.random()
+                    if (random < 0.25) {
+                        displayText = "Yes"
+                    } else {
+                        displayText = "No"
+                    }
+                    ++buttonClickedCount
+                }
+            ) {
                 Text("Meh")
             }
 
             Button(
                 onClick = {
-                displayText = "Nah"
-                ++buttonClickedCount
+                    val random = Math.random()
+                    if (random < 0.1) {
+                        displayText = "Yes"
+                    } else {
+                        displayText = "No"
+                    }
+                    ++buttonClickedCount
                 }
             ) {
                 Text("Nah")
