@@ -66,7 +66,8 @@ fun DecisionScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Student ID number: 1852182 and CCID: gmikhaie")
+        Text(text = "Student ID number: 1852182")
+        Text(text = "CCID: gmikhaie")
         Spacer(modifier = Modifier.height(16.dp))
 
 
